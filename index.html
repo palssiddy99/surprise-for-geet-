@@ -2,201 +2,192 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Will You Be My Valentine? ❤️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Geet ❤️</title>
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap');
-
-    * { box-sizing: border-box; }
-
-    body {
+    * {
       margin: 0;
-      min-height: 100vh;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
     }
 
-    /* Scrollbar width */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #ffe6eb;
-    border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #ff5c8a;
-    border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #e6004c;
-}
-
+    body {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 20px;
+    }
 
     .card {
-      background: rgba(255, 255, 255, 0.95);
+      background: white;
+      width: 100%;
+      max-width: 400px;
       border-radius: 20px;
-      padding: 40px 30px;
-      max-width: 420px;
-      width: 90%;
+      padding: 25px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      animation: fadeIn 1s ease;
       position: relative;
-      animation: fadeIn 1.2s ease;
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
+      color: #ff4d6d;
+      font-size: 1.8rem;
       margin-bottom: 10px;
-      color: #e63946;
     }
 
     p {
-      font-size: 1rem;
       color: #444;
-      line-height: 1.6;
-      margin-bottom: 25px;
-    }
-
-    .heart {
-      font-size: 3rem;
-      animation: pulse 1.2s infinite;
-      margin-bottom: 10px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-      position: relative;
+      font-size: 1rem;
+      margin: 12px 0;
+      line-height: 1.5;
     }
 
     button {
-      padding: 12px 26px;
-      border-radius: 30px;
       border: none;
+      padding: 12px 22px;
+      border-radius: 25px;
       font-size: 1rem;
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
-    #yesBtn {
-      background: #e63946;
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(230,57,70,0.4);
+    .yes {
+      background: #ff4d6d;
+      color: white;
     }
 
-    #noBtn {
-      background: #f1f1f1;
-      color: #555;
+    .no {
+      background: #ddd;
+      color: #444;
       position: absolute;
     }
 
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .message {
-      display: none;
+    .btn-group {
       margin-top: 20px;
-      font-size: 1.2rem;
-      color: #e63946;
-      font-weight: 500;
-      animation: fadeIn 0.8s ease;
+      height: 100px;
+      position: relative;
     }
 
-    .floating-hearts span {
-      position: absolute;
-      font-size: 1.5rem;
-      animation: floatUp 6s linear infinite;
-      opacity: 0.8;
+    .hidden {
+      display: none;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
+    .heart {
+      position: absolute;
+      font-size: 18px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.7;
     }
 
     @keyframes floatUp {
-      from { transform: translateY(100vh) scale(0.8); opacity: 0; }
-      to { transform: translateY(-10vh) scale(1.2); opacity: 1; }
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="floating-hearts"></div>
-
-  <div class="card">
-    <div class="heart">❤️</div>
-    <h1>Hiee baby 💕</h1>
+  <div class="card" id="page1">
+    <h1>Hey Geet ❤️</h1>
     <p>
-      From silly laughs to warm hugs and some sweet kisses,
-      every moment with you feels a little more magical.
-      You not only make my ordinary days brighter,
-      but also my best days unforgettable. we ve definetly come a long way and i could never imagine 
-      i could ever have someone as perfect as you  
-      So I have just one tiny (but very important) question for you…
+      Somehow, everything feels better  
+      when you’re around ✨
     </p>
+    <button class="yes" onclick="nextPage()">Tap to continue 💕</button>
+  </div>
 
-    <h1>Geet, will you be my Valentine? 🌷</h1>
+  <div class="card hidden" id="page2">
+    <h1>love 💖</h1>
+    <p>
+      Your smile, your vibe, your kisses....aghh i still cant forget our 
+      first hug and how speacial it was for me 
+       your really mean more than the world to me 💫
+    </p>
+    <button class="yes" onclick="nextPage()">One last thing 🥺</button>
+  </div>
 
-    <div class="buttons">
-      <button id="yesBtn">Yes 💖</button>
-      <button id="noBtn">No 🙈</button>
-    </div>
+  <div class="card hidden" id="page3">
+    <h1>So Geet… 💘</h1>
+    <p>Will you be my Valentine? 🌹</p>
 
-    <div class="message" id="loveMessage">
-      Yayyy Geet! You just made my heart do a happy dance 💃❤️
+    <div class="btn-group">
+      <button class="yes" onclick="yesClicked()">YES 💞</button>
+      <button class="no" id="noBtn">NO 🙈</button>
     </div>
   </div>
 
+  <div class="card hidden" id="page4">
+    <h1>YAYYYY!!! 🎉💖</h1>
+    <p>
+      You just made my day 😍  
+       i'll make sure u will have the best day of your life ❤️
+    </p>
+  </div>
+
   <script>
-    const noBtn = document.getElementById('noBtn');
-    const yesBtn = document.getElementById('yesBtn');
-    const message = document.getElementById('loveMessage');
-    const heartsContainer = document.querySelector('.floating-hearts');
+    let page = 1;
 
-    noBtn.addEventListener('mouseover', () => {
-      const x = Math.random() * 200 - 100;
-      const y = Math.random() * 200 - 100;
-      noBtn.style.transform = `translate(${x}px, ${y}px)`;
-    });
-
-    yesBtn.addEventListener('click', () => {
-      message.style.display = 'block';
-      generateHearts();
-    });
-
-    function generateHearts() {
-      for (let i = 0; i < 20; i++) {
-        const span = document.createElement('span');
-        span.textContent = '💗';
-        span.style.left = Math.random() * 100 + 'vw';
-        span.style.animationDuration = 4 + Math.random() * 3 + 's';
-        heartsContainer.appendChild(span);
-
-        setTimeout(() => span.remove(), 7000);
-      }
+    function nextPage() {
+      document.getElementById("page" + page).classList.add("hidden");
+      page++;
+      document.getElementById("page" + page).classList.remove("hidden");
     }
+
+    function yesClicked() {
+      document.getElementById("page3").classList.add("hidden");
+      document.getElementById("page4").classList.remove("hidden");
+    }
+
+    const noBtn = document.getElementById("noBtn");
+
+    function moveNoButton() {
+      const x = Math.random() * 200;
+      const y = Math.random() * 60;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    // Desktop + Mobile support
+    noBtn.addEventListener("mouseenter", moveNoButton);
+    noBtn.addEventListener("touchstart", moveNoButton);
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 500);
   </script>
 
 </body>
